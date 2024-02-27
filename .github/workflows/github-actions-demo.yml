@@ -13,8 +13,10 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     steps:
+     - name: "Event Name"
      - run:  echo "${{ github.event_name }}"
-     - uses: actions/checkout@v3.3.0
+     - uses: actions/checkout@v4
+     - name: "Repository Tree"
      - run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
