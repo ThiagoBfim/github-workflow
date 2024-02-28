@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
+        id: custom-action
         uses: ThiagoBfim/hello-world-docker-action@v1
         with:
           who-to-greet: '@thiagobfim'
+      - name: Output time set in the container
+        run: echo "The time was ${{ steps.custom-action.outputs.time }} when the action said hello"
