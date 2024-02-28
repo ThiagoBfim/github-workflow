@@ -1,0 +1,11 @@
+name: custom-action
+  on: [workflow_dispatch]
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        uses: ThiagoBfim/hello-world-docker-action@v1
+        with:
+          who-to-greet: '@thiagobfim'
